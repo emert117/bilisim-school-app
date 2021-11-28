@@ -46,8 +46,7 @@ class TestInMemoryDatabase(unittest.TestCase):
     data_obj = DataObject(data = {"test": "test-data"})
     self.db.add(data = data_obj)
     
-    obj = self.db.find(index = -1)
-    self.db.delete(object = obj)
+    self.db.delete(index = -1)
     after_delete_length = self.db.get_length()
 
     self.assertEqual(length, after_delete_length)

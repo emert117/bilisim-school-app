@@ -25,8 +25,8 @@ class InMemoryDatabase(object):
     return f"<InMemoryDatabase: {self.name}>"
 
 
-  def get_all(self) -> List[DataObject]:
-    return self.data
+  def get_all(self) -> list:
+    return list(map(lambda x: x.data, self.data))
 
   
   def get_length(self) -> int:
@@ -51,8 +51,8 @@ class InMemoryDatabase(object):
     return None
 
 
-  def delete(self, object: DataObject) -> None:
-    self.data.remove(object)
+  def delete(self, index: int) -> None:
+    self.data.pop(index)
     return None
 
   
